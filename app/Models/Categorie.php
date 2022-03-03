@@ -24,12 +24,12 @@ class Categorie extends Model
 
     public static function getProduisOfCategorie($name)
     {
-        return Categorie::with(["produit" => function($query) use ($name){
-            $query->where("name",$name);
-        }])->whereHas("produit")->get();
-
-        // return Categorie::with("produit")->whereHas("produit",function($query) use ($name){
+        // return Categorie::with(["produit" => function($query) use ($name){
         //     $query->where("name",$name);
-        // })->get();
+        // }])->get();
+
+        return Categorie::with("produit")->whereHas("produit",function($query) use ($name){
+            $query->where("name",$name);
+        })->get();
     }
 }
