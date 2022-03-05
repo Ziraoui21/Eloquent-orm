@@ -19,7 +19,6 @@ class Commande extends Model
     public function Client()
     {
         return $this->belongsTo(Client::class);
-        $this->id;
     }
 
     public function Produit()

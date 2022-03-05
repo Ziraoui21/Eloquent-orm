@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\RelationController;
+use App\Models\Produit;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,3 +24,12 @@ Route::get('/', function () {
 Route::get("onetoone",[RelationController::class,"oneToOne"]);
 Route::get("onetomany",[RelationController::class,"oneToMany"]);
 Route::get("manytomany",[RelationController::class,"manyToMany"]);
+
+Route::get("products",function(){
+    return view("test")->with("data",Produit::all());
+});
+
+Route::get("show/{id}",function($id){
+    return Produit::find(Crypt::decrypt($id));
+})->name("show");
+
