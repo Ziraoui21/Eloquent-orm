@@ -33,3 +33,7 @@ Route::get("show/{id}",function($id){
     return Produit::find(Crypt::decrypt($id));
 })->name("show");
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

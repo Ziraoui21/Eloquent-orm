@@ -17,6 +17,13 @@ class Produit extends Model
      */
     protected $table = 'produit';
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['name','price','categorie_id'];
+
     public function categorie()
     {
         return $this->belongsTo(Categorie::class);
