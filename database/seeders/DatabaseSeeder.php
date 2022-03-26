@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
 
         //Categorie::factory(5)->create();
 
-        //Produit::factory(10)->create();
+        //Produit::factory(5000)->create();
 
         //Commande::factory(10)->create();
 

@@ -33,13 +33,13 @@ class ProduitRequest extends FormRequest
         ];
     }
 
-    public function failedValidation(Validator $validator)
-    {
-        throw new HttpResponseException(response()->json([
-            'message'   => 'Validation errors',
-            'data'      => $validator->errors()
-        ]));
-    }
+    // public function failedValidation(Validator $validator)
+    // {
+    //     throw new HttpResponseException(response()->json([
+    //         'message'   => 'Validation errors',
+    //         'data'      => $validator->errors()
+    //     ]));
+    // }
 
     // public function messages() //OPTIONAL
     // {
